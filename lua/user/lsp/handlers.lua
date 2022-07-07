@@ -27,6 +27,15 @@ M.setup = function()
 	})
 end
 
+local function lsp_highlight_document(client)
+	local status_ok, illuminate = pcall(require, "illuminate")
+	if not status_ok then
+		vim.notify "Failed to load illuminate!"
+		return
+	end
+	illuminate.on_attach(client)
+end
+
 -- lsp keymaps
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
@@ -57,13 +66,14 @@ M.on_attach = function(client, bufnr)
 	end
 
 	lsp_keymaps(bufnr)
+	lsp_highlight_document(client)
 end
 
 -- Setup cmp lsp completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
-	print "cmp_nvim_lsp not installed!"
+	vim.notify "Failed to require cmp_nvim_lsp!"
 	return
 end
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
