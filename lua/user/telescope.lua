@@ -1,11 +1,11 @@
 -- Protected call to telescope
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-	print("Telescope not installed!")
+	print "Telescope not installed!"
 	return
 end
 
-local actions = require("telescope.actions")
+local actions = require "telescope.actions"
 
 telescope.setup({
 	defaults = {

@@ -38,9 +38,9 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-	keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
+	keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev({ border = \"rounded\" })<CR>", opts)
+	keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next({ border = \"rounded\" })<CR>", opts)
+	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float({ border = \"rounded\" })<CR>", opts)
 	keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
@@ -63,7 +63,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
-	print("cmp_nvim_lsp not installed!")
+	print "cmp_nvim_lsp not installed!"
 	return
 end
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)

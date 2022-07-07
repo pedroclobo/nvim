@@ -1,6 +1,6 @@
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
-	vim.notify("nvim-lsp-installer not installed!")
+	vim.notify "nvim-lsp-installer not installed!"
 	return
 end
 
@@ -44,12 +44,12 @@ for _, server in pairs(servers) do
 	}
 
 	if server == "sumneko_lua" then
-		local sumneko_opts = require("user.lsp.settings.sumneko_lua")
+		local sumneko_opts = require "user.lsp.settings.sumneko_lua"
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
 
 	if server == "pyright" then
-		local pyright_opts = require("user.lsp.settings.pyright")
+		local pyright_opts = require "user.lsp.settings.pyright"
 		opts = vim.tbl_deep_extend("force", pyright_opts, opts)
 	end
 

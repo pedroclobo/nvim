@@ -1,6 +1,6 @@
 local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
-	vim.notify("project_nvim is not installed!")
+	vim.notify "project_nvim is not installed!"
 	return
 end
 
@@ -12,13 +12,13 @@ project.setup({
 	patterns = { ".git", "Makefile" },
 	show_hidden = false,
 	silent_chdir = true,
-	datapath = vim.fn.stdpath("data"),
+	datapath = vim.fn.stdpath "data",
 })
 
 local tele_status_ok, telescope = pcall(require, "telescope")
 if not tele_status_ok then
-	vim.notify("telescope is not installed!")
+	vim.notify "telescope is not installed!"
 	return
 end
 
-telescope.load_extension("projects")
+telescope.load_extension "projects"

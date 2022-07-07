@@ -1,18 +1,18 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
-	vim.notify("Failed to require cmp!")
+	vim.notify "Failed to require cmp!"
 	return
 end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
-	vim.notify("Failed to require luasnip!")
+	vim.notify "Failed to require luasnip!"
 	return
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
-local icons = require("user.icons")
+local icons = require "user.icons"
 local kind_icons = icons.kind
 
 cmp.setup({
