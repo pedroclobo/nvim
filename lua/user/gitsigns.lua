@@ -1,6 +1,6 @@
 local status_ok, gitsigns = pcall(require, "gitsigns")
 if not status_ok then
-	print "gitsings not installed!"
+	vim.notify "Failed to require gitsigns!"
 	return
 end
 

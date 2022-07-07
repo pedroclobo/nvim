@@ -30,7 +30,7 @@ end
 local function lsp_highlight_document(client)
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
-		vim.notify "Failed to load illuminate!"
+		vim.notify "Failed to require illuminate!"
 		return
 	end
 	illuminate.on_attach(client)

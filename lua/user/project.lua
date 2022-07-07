@@ -1,6 +1,6 @@
 local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
-	vim.notify "project_nvim is not installed!"
+	vim.notify "Failed to require project_nvim!"
 	return
 end
 
@@ -15,9 +15,9 @@ project.setup({
 	datapath = vim.fn.stdpath "data",
 })
 
-local tele_status_ok, telescope = pcall(require, "telescope")
-if not tele_status_ok then
-	vim.notify "telescope is not installed!"
+local telescope_status_ok, telescope = pcall(require, "telescope")
+if not telescope_status_ok then
+	vim.notify "Failed to require telescope!"
 	return
 end
 

@@ -1,7 +1,7 @@
 -- Protected call to telescope
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-	print "Telescope not installed!"
+	vim.notify "Failed to require telescope!"
 	return
 end
 

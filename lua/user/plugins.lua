@@ -26,7 +26,7 @@ cmd [[
 -- Use a protected call to prevent errors
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-	vim.notify "packer is not installed!"
+	vim.notify "Failed to require packer!"
 	return
 end
 
