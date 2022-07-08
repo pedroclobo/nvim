@@ -49,6 +49,7 @@ return packer.startup(function(use)
 	use "goolord/alpha-nvim"
 	use "github/copilot.vim"
 	use "akinsho/toggleterm.nvim"
+	use "folke/which-key.nvim"
 
 	-- Colorschemes
 	use "shaunsingh/nord.nvim"

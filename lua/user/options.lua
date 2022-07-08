@@ -17,6 +17,7 @@ local options = {
 	swapfile = false, -- don't use a swapfile for the current buffer
 	tabstop = 4, -- number of spaces a tab counts for
 	termguicolors = true, -- enable more colors
+	timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
 	writebackup = false, -- don't make backup before overwriting file
 }
 
