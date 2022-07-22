@@ -17,7 +17,7 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Explorer
-keymap("n", "<leader>e", ":Lex 10<CR>", opts)
+keymap("n", "<leader>e", ":Lex 15<CR>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
