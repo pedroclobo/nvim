@@ -1,4 +1,3 @@
--- Protected call to telescope
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
 	vim.notify "Failed to require telescope!"
@@ -9,10 +8,15 @@ local actions = require "telescope.actions"
 
 telescope.setup({
 	defaults = {
+		layout_strategy = "bottom_pane",
 
-		prompt_prefix = "  ",
-		selection_caret = "﬌ ",
-		path_display = { "smart" },
+		layout_config = {
+			bottom_pane = {
+				height = 10,
+				preview_cutoff = 120,
+				prompt_position = "top",
+			},
+		},
 
 		mappings = {
 			i = {
@@ -81,13 +85,7 @@ telescope.setup({
 	},
 	pickers = {
 		find_files = {
-			theme = "ivy",
-		},
-		live_grep = {
-			theme = "ivy",
-		},
-		git_files = {
-			theme = "ivy",
+			previewer = false,
 		},
 	},
 	extensions = {},
