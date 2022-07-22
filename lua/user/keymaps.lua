@@ -29,10 +29,10 @@ keymap("n", "<leader>r", ":!runner % <CR>", {})
 keymap("n", "<leader>o", ":!opout % <CR>", {})
 
 -- Telescope
-keymap("n", "<leader>s", "<cmd>lua require'telescope.builtin'.find_files()<CR>", opts)
-keymap("n", "<leader>g", "<cmd>lua require'telescope.builtin'.git_files()<CR>", opts)
-keymap("n", "<leader>lg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
+keymap("n", "<leader>s", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>g", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope projects<CR>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
 -- Format
 keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting_sync()<CR>", opts)
