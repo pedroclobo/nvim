@@ -36,3 +36,9 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
 -- Format
 keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting_sync()<CR>", opts)
+
+-- Switch between recent buffers
+keymap("n", "<leader><leader>", "<C-^>", opts)
+
+-- Copy buffer into clipboard
+keymap("n", "<leader>y", ":w !xsel -ib<CR><CR>", opts)
