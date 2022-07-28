@@ -82,6 +82,7 @@ return packer.startup(function(use)
 	})
 	use "p00f/nvim-ts-rainbow"
 	use "windwp/nvim-ts-autotag"
+	use "lewis6991/spellsitter.nvim"
 
 	-- Misc
 	use "windwp/nvim-autopairs"
