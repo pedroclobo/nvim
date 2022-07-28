@@ -1,3 +1,6 @@
+-- Improve Startup Time
+require "user.impatient"
+
 -- Plugin Manager
 require "user.plugins"
 
