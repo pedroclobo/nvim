@@ -1,6 +1,12 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason = pcall(require, "mason")
 if not status_ok then
-	vim.notify "Failed to require nvim-lsp-installer!"
+	vim.notify "Failed to require mason!"
+	return
+end
+
+local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_ok then
+	vim.notify "Failed to require mason-lspconfig!"
 	return
 end
 
@@ -13,8 +19,6 @@ local servers = {
 }
 
 local settings = {
-	ensure_installed = servers,
-	automatic_installation = true,
 	ui = {
 		keymaps = {
 			toggle_server_expand = "<CR>",
@@ -27,12 +31,18 @@ local settings = {
 		},
 	},
 	log_level = vim.log.levels.INFO,
+	max_concurrent_installers = 4,
 }
 
-lsp_installer.setup(settings)
+mason.setup(settings)
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
+mason_lspconfig.setup({
+	ensure_installed = servers,
+	automatic_installation = true,
+})
+
+local status_ok, lspconfig = pcall(require, "lspconfig")
+if not status_ok then
 	return
 end
 
