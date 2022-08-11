@@ -34,9 +34,6 @@ keymap("n", "<leader>g", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope projects<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
--- Format
-keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting_sync()<CR>", opts)
-
 -- Switch between recent buffers
 keymap("n", "<leader><leader>", "<C-^>", opts)
 

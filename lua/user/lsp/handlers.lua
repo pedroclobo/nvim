@@ -49,6 +49,16 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 end
 
+local function lsp_autocommands()
+	local autocmd = vim.api.nvim_create_autocmd
+
+	autocmd({ "BufWritePre" }, {
+		callback = function()
+			vim.lsp.buf.formatting_sync()
+		end,
+	})
+end
+
 -- on_attach function
 M.on_attach = function(client, bufnr)
 	if client.name == "rust_analyzer" then
@@ -62,6 +72,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	lsp_keymaps(bufnr)
+	lsp_autocommands()
 	lsp_highlight_document(client)
 end
 
