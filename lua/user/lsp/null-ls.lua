@@ -5,10 +5,13 @@ if not status_ok then
 end
 
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
 	debug = false,
 	sources = {
+		diagnostics.shellcheck,
+		diagnostics.write_good,
 		formatting.clang_format.with(require "user.lsp.settings.clang_format"),
 		formatting.prettier.with(require "user.lsp.settings.prettier"),
 		formatting.rustfmt.with(require "user.lsp.settings.rustfmt"),
