@@ -59,6 +59,7 @@ return packer.startup(function(use)
 	use "williamboman/mason-lspconfig.nvim"
 	use "jose-elias-alvarez/null-ls.nvim"
 	use "RRethy/vim-illuminate"
+	use "Maan2003/lsp_lines.nvim"
 
 	-- Completion
 	use "hrsh7th/nvim-cmp"
