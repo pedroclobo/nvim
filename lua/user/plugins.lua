@@ -15,27 +15,14 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	cmd [[packadd packer.nvim]]
 end
 
--- Reload neovim whenever plugins.lua is written
-cmd [[
-	augroup packer_user_config
-		autocmd!
-		autocmd BufWritePost plugins.lua source <afile> | PackerSync
-	augroup end
-]]
-
 -- Use a protected call to prevent errors
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	vim.notify "Failed to require packer!"
-	return
-end
+local present, packer = pcall(require, "packer")
+if not present then return end
 
 -- Use a popup window for packer
 packer.init({
 	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
+		open_fn = function() return require("packer.util").float({ border = "rounded" }) end,
 	},
 })
 
@@ -89,7 +76,5 @@ return packer.startup(function(use)
 	use "lewis6991/gitsigns.nvim"
 
 	-- Set up configuration after cloning packer.nvim
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
+	if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
