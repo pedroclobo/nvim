@@ -1,7 +1,5 @@
-local status_ok, alpha = pcall(require, "alpha")
-if not status_ok then
-	return
-end
+local present, alpha = pcall(require, "alpha")
+if not present then return end
 
 local dashboard = require "alpha.themes.dashboard"
 
@@ -26,9 +24,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", " Quit", ":qa<CR>"),
 }
 
-local function footer()
-	return "Pedro Lobo"
-end
+local function footer() return "Pedro Lobo" end
 
 dashboard.section.footer.val = footer()
 dashboard.section.footer.opts.hl = "Type"

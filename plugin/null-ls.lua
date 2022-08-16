@@ -1,8 +1,5 @@
-local status_ok, null_ls = pcall(require, "null-ls")
-if not status_ok then
-	vim.notify "Failed to require null-ls!"
-	return
-end
+local present, null_ls = pcall(require, "null-ls")
+if not present then return end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics

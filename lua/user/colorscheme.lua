@@ -1,7 +1,4 @@
 local colorscheme = "nord"
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-	vim.notify("Colorscheme " .. colorscheme .. " not found!")
-	return
-end
+local present, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not present then return end

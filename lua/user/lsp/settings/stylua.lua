@@ -4,5 +4,7 @@ return {
 		"NoSingleString",
 		"--quote-style",
 		"ForceDouble",
+		"--collapse-simple-statement",
+		"Always",
 	},
 }

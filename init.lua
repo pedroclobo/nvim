@@ -8,16 +8,4 @@ require "user.keymaps"
 require "user.options"
 
 -- LSP
-require "user.lsp"
-
--- Plugins
-require "user.alpha"
-require "user.autopairs"
-require "user.cmp"
-require "user.copilot"
-require "user.gitsigns"
-require "user.project"
-require "user.telescope"
-require "user.telescope"
-require "user.treesitter"
-require "user.spellsitter"
+--require "user.lsp"
