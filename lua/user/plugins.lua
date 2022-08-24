@@ -40,12 +40,21 @@ return packer.startup(function(use)
 	use "shaunsingh/nord.nvim"
 
 	-- LSP
-	use "neovim/nvim-lspconfig"
-	use "williamboman/mason.nvim"
-	use "williamboman/mason-lspconfig.nvim"
-	use "jose-elias-alvarez/null-ls.nvim"
-	use "RRethy/vim-illuminate"
-	use "Maan2003/lsp_lines.nvim"
+	use({
+		"neovim/nvim-lspconfig",
+		requires = {
+			"jose-elias-alvarez/null-ls.nvim",
+			"RRethy/vim-illuminate",
+		},
+	})
+
+	-- LSP Installer
+	use({
+		"williamboman/mason.nvim",
+		requires = {
+			"williamboman/mason-lspconfig.nvim",
+		},
+	})
 
 	-- Completion
 	use "hrsh7th/nvim-cmp"

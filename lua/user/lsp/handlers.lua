@@ -1,20 +1,13 @@
-local present, lsp = pcall(require, "lspconfig")
-if not present then return end
+local M = {}
 
-local servers = {
-	"bashls",
-	"clangd",
-	"pyright",
-	"rust_analyzer",
-	"sumneko_lua",
-}
-
+-- Illuminate
 local function highlight(client)
 	local present, illuminate = pcall(require, "illuminate")
 	if not present then return end
 	illuminate.on_attach(client)
 end
 
+-- LSP specific keymaps
 local function keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
@@ -30,6 +23,7 @@ local function keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 end
 
+-- LSP specific autocommands
 local function autocommands(bufnr)
 	vim.api.nvim_create_autocmd("BufWritePre", {
 		group = vim.api.nvim_create_augroup("Format", { clear = true }),
@@ -38,35 +32,19 @@ local function autocommands(bufnr)
 	})
 end
 
-local on_attach = function(client, bufnr)
+M.on_attach = function(client, bufnr)
 	highlight(client)
 	keymaps(bufnr)
 	autocommands(bufnr)
 
-	-- disable autoformat
+	-- Disable autoformat
 	client.resolved_capabilities.document_formatting = false
 	client.resolved_capabilities.document_range_formatting = false
 end
 
 local present, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not present then return end
-local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-for _, server in pairs(servers) do
-	local opts = {
-		on_attach = on_attach,
-		capabilities = capabilities,
-	}
+M.capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-	if server == "sumneko_lua" then
-		local sumneko_opts = require "user.lsp.settings.sumneko_lua"
-		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-	end
-
-	if server == "pyright" then
-		local pyright_opts = require "user.lsp.settings.pyright"
-		opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-	end
-
-	lsp[server].setup(opts)
-end
+return M
