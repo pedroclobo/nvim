@@ -27,6 +27,7 @@ return packer.startup(function(use)
 	use "goolord/alpha-nvim"
 	use "windwp/nvim-autopairs"
 	use "lewis6991/gitsigns.nvim"
+	use "numToStr/Comment.nvim"
 
 	-- Colorschemes
 	use "shaunsingh/nord.nvim"
