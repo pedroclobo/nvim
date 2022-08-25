@@ -14,17 +14,18 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
-	dashboard.button("f", " Find file", ":Telescope find_files <CR>"),
-	dashboard.button("e", " New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("p", " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
-	dashboard.button("r", " Recent files", ":Telescope oldfiles <CR>"),
-	dashboard.button("t", " Find text", ":Telescope live_grep <CR>"),
-	dashboard.button("c", " Config", ":e ~/.config/nvim/init.lua <CR>"),
+	dashboard.button("e", " New file", ":ene <BAR> startinsert<CR>"),
+	dashboard.button("s", " Find file", ":Telescope find_files<CR>"),
+	dashboard.button("g", " Find text", ":Telescope live_grep<CR>"),
+	dashboard.button("h", " Help", ":Telescope help_tags<CR>"),
+	dashboard.button("c", " Config", ":e ~/.config/nvim/init.lua<CR>"),
 	dashboard.button("u", " Update", ":PackerSync<CR>"),
 	dashboard.button("q", " Quit", ":qa<CR>"),
 }
 
-local function footer() return "Pedro Lobo" end
+local function footer()
+	return "  " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+end
 
 dashboard.section.footer.val = footer()
 dashboard.section.footer.opts.hl = "Type"
