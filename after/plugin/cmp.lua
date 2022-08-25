@@ -4,8 +4,6 @@ if not present then return end
 local present, luasnip = pcall(require, "luasnip")
 if not present then return end
 
-require("luasnip/loaders/from_vscode").lazy_load()
-
 local icons = require "user.icons"
 local kind_icons = icons.kind
 
@@ -18,15 +16,15 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-h>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-l>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-		["<C-y>"] = cmp.mapping.confirm({ select = false }),
+		["<C-y>"] = cmp.mapping.confirm({ select = true }),
 		["<C-e>"] = cmp.mapping.close(),
 	},
 	sources = {
-		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
+		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "buffer", keyword_length = 5 },
 	},
 	formatting = {
 		format = function(entry, vim_item)
@@ -48,6 +46,6 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 	},
 })
