@@ -33,6 +33,7 @@ keymap("n", "<leader>s", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>p", "<cmd>Telescope projects<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
+keymap("n", "<leader>h", "<cmd>Telescope help_tags<CR>", opts)
 
 -- Switch between recent buffers
 keymap("n", "<leader><leader>", "<C-^>", opts)
