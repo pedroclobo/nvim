@@ -24,7 +24,8 @@ dashboard.section.buttons.val = {
 }
 
 local function footer()
-	return "  " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+	local version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+	return "v" .. version
 end
 
 dashboard.section.footer.val = footer()
