@@ -4,8 +4,8 @@ if not present then return end
 local present, luasnip = pcall(require, "luasnip")
 if not present then return end
 
-local icons = require "user.icons"
-local kind_icons = icons.kind
+local present, lspkind = pcall(require, "lspkind")
+if not present then return end
 
 cmp.setup({
 	snippet = {
@@ -27,19 +27,16 @@ cmp.setup({
 		{ name = "buffer", keyword_length = 5 },
 	},
 	formatting = {
-		format = function(entry, vim_item)
-			vim_item.kind = kind_icons[vim_item.kind]
-
-			vim_item.menu = ({
+		format = lspkind.cmp_format({
+			with_text = true,
+			menu = {
 				nvim_lsp = "",
 				nvim_lua = "",
 				luasnip = "",
 				buffer = "",
 				path = "",
-			})[entry.source.name]
-
-			return vim_item
-		end,
+			},
+		}),
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
