@@ -28,6 +28,12 @@ return packer.startup(function(use)
 	use "windwp/nvim-autopairs"
 	use "lewis6991/gitsigns.nvim"
 	use "numToStr/Comment.nvim"
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"kyazdani42/nvim-web-devicons",
+		},
+	})
 
 	-- Colorschemes
 	use "shaunsingh/nord.nvim"
