@@ -82,6 +82,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		requires = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
 			"p00f/nvim-ts-rainbow",
 			"windwp/nvim-ts-autotag",
 			"lewis6991/spellsitter.nvim",
