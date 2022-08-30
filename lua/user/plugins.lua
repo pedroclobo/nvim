@@ -20,7 +20,14 @@ packer.init({
 	display = {
 		open_fn = function() return require("packer.util").float({ border = "rounded" }) end,
 	},
+	profile = {
+		enable = true,
+		threshold = 0,
+	},
 })
+
+-- Caching to improve performance
+pcall(require, "impatient")
 
 return packer.startup(function(use)
 	use "wbthomason/packer.nvim"
@@ -28,6 +35,7 @@ return packer.startup(function(use)
 	use "windwp/nvim-autopairs"
 	use "lewis6991/gitsigns.nvim"
 	use "numToStr/Comment.nvim"
+	use "lewis6991/impatient.nvim"
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = {
