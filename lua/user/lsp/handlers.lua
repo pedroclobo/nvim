@@ -45,6 +45,12 @@ end
 local present, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not present then return end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+-- Fix clangd warning
+-- https://github.com/LunarVim/LunarVim/issues/2597
+capabilities.offsetEncoding = "utf-8"
+
+M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 return M
