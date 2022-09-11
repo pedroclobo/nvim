@@ -2,6 +2,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Leader Key
+vim.keymap.set("n", "<space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Window navegation
