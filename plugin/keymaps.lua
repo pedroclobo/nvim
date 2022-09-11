@@ -25,9 +25,9 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Scripts
-keymap("n", "<leader>c", ":!compiler % <CR>", {})
-keymap("n", "<leader>r", ":!runner % <CR>", {})
-keymap("n", "<leader>o", ":!opout % <CR>", {})
+keymap("n", "<leader><leader>c", ":!compiler % <CR>", {})
+keymap("n", "<leader><leader>r", ":!runner % <CR>", {})
+keymap("n", "<leader><leader>o", ":!opout % <CR>", {})
 
 -- Telescope
 keymap("n", "<leader>s", "<cmd>Telescope find_files<CR>", opts)
@@ -37,7 +37,7 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>h", "<cmd>Telescope help_tags<CR>", opts)
 
 -- Switch between recent buffers
-keymap("n", "<leader><leader>", "<C-^>", opts)
+keymap("n", "<leader><Tab>", "<C-^>", opts)
 
 -- Copy buffer into clipboard
 keymap("n", "<leader>y", ":w !xsel -ib<CR><CR>", opts)
