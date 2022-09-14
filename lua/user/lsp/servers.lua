@@ -3,6 +3,7 @@ local M = {}
 M.servers = {
 	bash_language_server = {},
 	clangd = {},
+	html_lsp = {},
 	pyright = {},
 	r_language_server = {},
 	rust_analyzer = {},
@@ -33,7 +34,7 @@ M.formatters = {
 			"{UseTab: ForIndentation, IndentWidth: 8, SortIncludes: true, PointerAlignment: Right, SortUsingDeclarations: false}",
 		},
 	},
-	prettier = {
+	prettierd = {
 		extra_args = {
 			"--use-tabs",
 		},
@@ -46,7 +47,9 @@ M.formatters = {
 	},
 	shfmt = {
 		extra_args = {
+			"--keep-padding",
 			"--space-redirects",
+			"--switch-case-indent",
 		},
 	},
 	stylua = {
