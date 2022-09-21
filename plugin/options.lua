@@ -14,6 +14,7 @@ local options = {
 	showcmd = false, -- don't show command in the last line of the screen
 	showmode = false, -- don't put a message on the last line while in insert or visual modes
 	signcolumn = "yes", -- draw a left side column
+	spelllang = "en_us,pt_pt", -- word lists
 	swapfile = false, -- don't use a swapfile for the current buffer
 	tabstop = 4, -- number of spaces a tab counts for
 	termguicolors = true, -- enable more colors
