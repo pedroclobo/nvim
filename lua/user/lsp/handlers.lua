@@ -51,6 +51,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- https://github.com/LunarVim/LunarVim/issues/2597
 capabilities.offsetEncoding = "utf-8"
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
