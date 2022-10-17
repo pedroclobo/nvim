@@ -25,6 +25,7 @@ M.servers = {
 			},
 		},
 	},
+	texlab = {},
 }
 
 M.formatters = {
@@ -34,6 +35,7 @@ M.formatters = {
 			"{UseTab: ForIndentation, IndentWidth: 8, SortIncludes: true, PointerAlignment: Right, SortUsingDeclarations: false}",
 		},
 	},
+	latexindent = {},
 	prettierd = {
 		extra_args = {
 			"--use-tabs",

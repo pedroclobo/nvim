@@ -12,6 +12,7 @@ null_ls.setup({
 		diagnostics.shellcheck,
 		diagnostics.write_good,
 		formatting.clang_format.with(formatters["clang_format"]),
+		formatting.latexindent.with(formatters["latexindent"]),
 		formatting.prettierd.with(formatters["prettierd"]),
 		formatting.rustfmt.with(formatters["rustfmt"]),
 		formatting.shfmt.with(formatters["shfmt"]),
