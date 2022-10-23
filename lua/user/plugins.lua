@@ -42,6 +42,7 @@ return packer.startup(function(use)
 			"kyazdani42/nvim-web-devicons",
 		},
 	})
+	use "github/copilot.vim"
 
 	-- Colorschemes
 	use "shaunsingh/nord.nvim"
