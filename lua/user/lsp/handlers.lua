@@ -48,8 +48,12 @@ if not present then return end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 -- Fix clangd warning
--- https://github.com/LunarVim/LunarVim/issues/2597
-capabilities.offsetEncoding = "utf-8"
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
+vim.notify = function(msg, ...)
+	if msg:match "warning: multiple different client offset_encodings" then return end
+
+	vim.notify(msg, ...)
+end
 
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
