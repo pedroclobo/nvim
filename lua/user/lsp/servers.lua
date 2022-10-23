@@ -1,9 +1,9 @@
 local M = {}
 
 M.servers = {
-	bash_language_server = {},
+	bashls = {},
 	clangd = {},
-	html_lsp = {},
+	html = {},
 	pyright = {},
 	r_language_server = {},
 	rust_analyzer = {},
