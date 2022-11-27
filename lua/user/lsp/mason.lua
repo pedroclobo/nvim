@@ -24,12 +24,7 @@ mason.setup({
 })
 
 local servers = require("user.lsp.servers")["servers"]
-
--- Automatically install LSP servers
-mason_lspconfig.setup({
-	ensure_installed = vim.tbl_keys(servers),
-	automatic_installation = true,
-})
+mason_lspconfig.setup()
 
 -- Setup all installed servers
 local on_attach = require("user.lsp.handlers").on_attach
