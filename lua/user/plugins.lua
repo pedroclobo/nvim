@@ -43,6 +43,7 @@ return packer.startup(function(use)
 		},
 	})
 	use "github/copilot.vim"
+	use "andweeb/presence.nvim"
 
 	-- Colorschemes
 	use "shaunsingh/nord.nvim"
