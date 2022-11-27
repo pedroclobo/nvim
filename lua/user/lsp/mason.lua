@@ -29,6 +29,7 @@ mason_lspconfig.setup()
 -- Setup all installed servers
 local on_attach = require("user.lsp.handlers").on_attach
 local capabilites = require("user.lsp.handlers").capabilities
+capabilites.offsetEncoding = { "utf-16" }
 
 for _, server in pairs(mason_lspconfig.get_installed_servers()) do
 	local opts = {
