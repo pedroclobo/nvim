@@ -64,6 +64,7 @@ return packer.startup(function(use)
 			"williamboman/mason-lspconfig.nvim",
 		},
 	})
+	use({ "mfussenegger/nvim-jdtls", ft = { "java" } })
 
 	-- Completion
 	use({

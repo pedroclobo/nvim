@@ -4,6 +4,7 @@ M.servers = {
 	bashls = {},
 	clangd = {},
 	html = {},
+	jdtls = {},
 	pyright = {},
 	r_language_server = {},
 	rust_analyzer = {},
