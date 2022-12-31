@@ -42,7 +42,7 @@ return packer.startup(function(use)
 			"kyazdani42/nvim-web-devicons",
 		},
 	})
-	use "github/copilot.vim"
+	use "zbirenbaum/copilot.lua"
 	use "andweeb/presence.nvim"
 
 	-- Colorschemes
@@ -77,6 +77,7 @@ return packer.startup(function(use)
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
+			"zbirenbaum/copilot-cmp",
 		},
 	})
 

@@ -1,6 +1,9 @@
 local present, cmp = pcall(require, "cmp")
 if not present then return end
 
+local present, copilot_cmp = pcall(require, "copilot_cmp")
+if not present then return end
+
 local present, luasnip = pcall(require, "luasnip")
 if not present then return end
 
@@ -23,6 +26,7 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+		{ name = "copilot" },
 		{ name = "path" },
 		{ name = "buffer", keyword_length = 5 },
 	},
@@ -33,8 +37,9 @@ cmp.setup({
 				nvim_lsp = "",
 				nvim_lua = "",
 				luasnip = "",
-				buffer = "",
+				copilot = "",
 				path = "",
+				buffer = "",
 			},
 		}),
 	},
@@ -46,3 +51,5 @@ cmp.setup({
 		ghost_text = true,
 	},
 })
+
+copilot_cmp.setup()
