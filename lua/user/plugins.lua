@@ -44,6 +44,7 @@ return packer.startup(function(use)
 	})
 	use "zbirenbaum/copilot.lua"
 	use "andweeb/presence.nvim"
+	use "nvim-lualine/lualine.nvim"
 
 	-- Colorschemes
 	use "shaunsingh/nord.nvim"
