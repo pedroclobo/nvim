@@ -1,25 +1,25 @@
 local options = {
-	autoindent = true, -- copy indent from current line on new line
-	clipboard = "unnamedplus", -- use system clipboard
-	colorcolumn = "80", -- draw a column at the specified char value
-	completeopt = { "menuone", "noselect" }, -- insert mode completion
-	cursorline = true, -- highlight the text line of the cursor
-	fileencoding = "utf-8", -- file-content encoding for current buffer
-	hlsearch = false, -- disable match highlight while searching
-	ignorecase = true, -- case insensitive search
-	number = true, -- show current absolute line number
-	relativenumber = true, -- show the relative line numbers
-	scrolloff = 8, -- minimal numbers of lines to keep above and below cursor
-	shiftwidth = 4, -- number of spaces to use after an indent
-	showcmd = false, -- don't show command in the last line of the screen
-	showmode = false, -- don't put a message on the last line while in insert or visual modes
-	signcolumn = "yes", -- draw a left side column
-	spelllang = "en_us,pt_pt", -- word lists
-	swapfile = false, -- don't use a swapfile for the current buffer
-	tabstop = 4, -- number of spaces a tab counts for
-	termguicolors = true, -- enable more colors
-	timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
-	writebackup = false, -- don't make backup before overwriting file
+	autoindent = true,
+	clipboard = "unnamedplus",
+	colorcolumn = "80",
+	completeopt = { "menuone", "noselect" },
+	cursorline = true,
+	fileencoding = "utf-8",
+	hlsearch = false,
+	ignorecase = true,
+	number = true,
+	relativenumber = true,
+	scrolloff = 8,
+	shiftwidth = 4,
+	showcmd = false,
+	showmode = false,
+	signcolumn = "yes",
+	spelllang = "en_us,pt_pt",
+	swapfile = false,
+	tabstop = 4,
+	termguicolors = true,
+	timeoutlen = 500,
+	writebackup = false,
 }
 
 for k, v in pairs(options) do
