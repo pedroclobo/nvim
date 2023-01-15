@@ -1,6 +1,7 @@
 local options = {
 	autoindent = true,
 	clipboard = "unnamedplus",
+	cmdheight = 0,
 	colorcolumn = "80",
 	completeopt = { "menuone", "noselect" },
 	cursorline = true,
