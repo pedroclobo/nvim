@@ -23,19 +23,9 @@ local function keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 end
 
--- LSP specific autocommands
-local function autocommands(bufnr)
-	vim.api.nvim_create_autocmd("BufWritePre", {
-		group = vim.api.nvim_create_augroup("Format", { clear = true }),
-		buffer = bufnr,
-		callback = function() vim.lsp.buf.format() end,
-	})
-end
-
 M.on_attach = function(client, bufnr)
 	highlight(client)
 	keymaps(bufnr)
-	autocommands(bufnr)
 
 	-- Disable autoformat
 	client.server_capabilities.document_formatting = false
